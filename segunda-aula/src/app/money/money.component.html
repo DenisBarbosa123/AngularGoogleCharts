@@ -10,5 +10,11 @@
         <input type="date" id="date" name="date" [(ngModel)]="newMoney.date">
     </div>
     <input type="button" value="Adicionar" (click)="save()">
-</form>
 
+    <h1 *ngIf='flag==true'> Sem dados cadastrados</h1>
+
+    <div *ngIf='flag==false'>
+        <google-chart [title]="title" [data]="myData" [columnNames]="myColumnNames" [type]="type" [options]="myOptions" [width]="width" [height]="height">
+        </google-chart>
+    </div>
+</form>
